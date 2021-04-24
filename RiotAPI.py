@@ -32,7 +32,6 @@ class RiotAPI(object):
             version=Consts.API_VERSIONS['summoner'],
             names=name
         )
-
         return self._request(api_url)
     
     def get_matchlist_by_account(self, AccountID, params={}):
@@ -43,12 +42,11 @@ class RiotAPI(object):
         )
         return self._request (api_url, params)
 
-    def get_match_by_matchid(self, match):
+    def get_match_by_matchid(self, matchId):
         
         api_url = Consts.URL['matches_by_matchID'].format(
             version=Consts.API_VERSIONS['match'],
-            matchID=match
+            matchID=matchId
         )
-
         return self._request (api_url)
 
