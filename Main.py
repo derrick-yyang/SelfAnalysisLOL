@@ -28,8 +28,7 @@ def get_winRate(matchList, name, api):
 
 
 def main():
-    for i in range(1):
-        print(i)
+
     apikey = 'RGAPI-21a0bebc-f5f0-4c22-80c5-cfb9103a9b4e'  # API KEY IS HERE
     api = RiotAPI(apikey)
     summonerName = input("Enter Summoner Name:")
@@ -63,8 +62,8 @@ def main():
         rowLabelIndex = df.index[i]
         df = df.rename(index={rowLabelIndex: "Match " + str(i + 1)})
 
-    df.to_csv('data.csv', mode='a')
-
+    df.to_csv('data.csv', mode='w')
+    
 
 if __name__ == "__main__":
     main()

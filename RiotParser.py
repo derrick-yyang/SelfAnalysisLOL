@@ -12,21 +12,31 @@
 
 class RiotParser(object):
 
+    SUMMONER_NAME = 'Summoner Name'
+    GAME_DURATION = 'Game Duration'
+    MATCH_RESULT = 'Match Result'
+    CHAMPION_ID = 'Champion ID'
+    CREEP_SCORE = 'Creep Score'
+    GOLD_EARNED = 'Gold Earned'
+    CHAMPION_LEVEL = 'Champion Level'
+    VISION_SCORE = 'Vision Score'
+
     def __init__(self, matchDataList, name):
         self.matchDataList = matchDataList
         self.summonerName = name
 
     # Parses desired data (refer to above) from a list of matchData into a dictionary
     def parseData(self):
+
         dataList = self.matchDataList
-        parsedData = {'Summoner Name': [],
-                      'Game Duration': [],
-                      'Match Result': [],
-                      'Champion ID': [],
-                      'Creep Score': [],
-                      'Gold Earned': [],
-                      'Champion Level': [],
-                      'Vision Score': []
+        parsedData = {self.SUMMONER_NAME: [],
+                      self.GAME_DURATION: [],
+                      self.MATCH_RESULT: [],
+                      self.CHAMPION_ID: [],
+                      self.CREEP_SCORE: [],
+                      self.GOLD_EARNED: [],
+                      self.CHAMPION_LEVEL: [],
+                      self.VISION_SCORE: []
                       }
 
         for i in range(len(dataList)):
@@ -41,13 +51,13 @@ class RiotParser(object):
                 else:
                     mr = 'Defeat'
                 # Creating the dictionary
-                parsedData['Summoner Name'].append(self.summonerName)
-                parsedData['Game Duration'].append(dataList[i]['gameDuration'])
-                parsedData['Match Result'].append(mr)
-                parsedData['Champion ID'].append(dataList[i]['participants'][participantID - 1]['championId'])
-                parsedData['Creep Score'].append(dataList[i]['participants'][participantID - 1]['stats']['totalMinionsKilled'])
-                parsedData['Gold Earned'].append(dataList[i]['participants'][participantID - 1]['stats']['goldEarned'])
-                parsedData['Champion Level'].append(dataList[i]['participants'][participantID - 1]['stats']['champLevel'])
-                parsedData['Vision Score'].append(dataList[i]['participants'][participantID - 1]['stats']['visionScore'])
+                parsedData[self.SUMMONER_NAME].append(self.summonerName)
+                parsedData[self.GAME_DURATION].append(dataList[i]['gameDuration'])
+                parsedData[self.MATCH_RESULT].append(mr)
+                parsedData[self.CHAMPION_ID].append(dataList[i]['participants'][participantID - 1]['championId'])
+                parsedData[self.CREEP_SCORE].append(dataList[i]['participants'][participantID - 1]['stats']['totalMinionsKilled'])
+                parsedData[self.GOLD_EARNED].append(dataList[i]['participants'][participantID - 1]['stats']['goldEarned'])
+                parsedData[self.CHAMPION_LEVEL].append(dataList[i]['participants'][participantID - 1]['stats']['champLevel'])
+                parsedData[self.VISION_SCORE].append(dataList[i]['participants'][participantID - 1]['stats']['visionScore'])
 
         return parsedData
