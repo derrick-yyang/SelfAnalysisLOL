@@ -8,11 +8,13 @@ URL = {
 
 API_VERSIONS = {
     'summoner':'4',
-    'match':'4'
+    'matchList': '4',
+    'matchData':'4'
 }
 
 REGIONS = {
-    'north_america_platform_1':'na1'
+    'north_america_platform_1':'na1',
+    'america':'americas'
 }
 
 
