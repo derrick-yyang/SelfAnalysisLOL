@@ -1,6 +1,9 @@
 import RiotConsts as Consts
 import requests
 
+# This class is responsible for making API Calls/Requests from RiotAPI
+# Website: https://developer.riotgames.com/
+
 class RiotAPI(object):
 
     def __init__(self, api_key, region=Consts.REGIONS['north_america_platform_1']):
@@ -44,7 +47,6 @@ class RiotAPI(object):
         return response.json()
 
     # Request functions from RiotAPI URL
-
     def get_summoner_by_name(self, name):
         api_url = Consts.URL['summoner_by_name'].format(
             version=Consts.API_VERSIONS['summoner'],
@@ -68,9 +70,13 @@ class RiotAPI(object):
         )
         return self._request(api_url)
 
+    # get_matchDataList_by_account() returns a list of matchData (using get_match_by_match_id) from 
+    #   games indicated by beginIndex and endIndex
+    # Note: the number of games is inclusive in the beginIndex but not endIndex 
+    #       Ex. 0->5 = First 5 games (0+1->5)
     def get_matchDataList_by_account(self, name, beginIndex, endIndex):
 
-        # Generate summoner and matchList dicts
+        # Generate summoner and matchList data
         summoner = self.get_summoner_by_name(name)
         matchList = self.get_matchlist_by_account(
             summoner['accountId'], {'beginIndex': beginIndex, 'endIndex': endIndex})

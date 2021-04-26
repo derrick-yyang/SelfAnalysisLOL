@@ -1,25 +1,21 @@
 from RiotAPI import RiotAPI
 from RiotParser import RiotParser
+import RiotConsts as Consts
 import time
 
-def main():
+# This file is treated as a back up for Main on jupyter Notebook
 
-    apikey = 'RGAPI-72d0e930-a00d-4814-9b6f-071c988f6b71'  # API KEY IS HERE
-    api = RiotAPI(apikey)
+# create_csv() generates a csv file with parsed data for 686 games of the user indicated by
+#   summonerName.
+def create_csv(api, summonerName):
 
-    # User input starts here:
-    summonerName = 'Controleed Freak'
-
-    # begin index starts at 0, and end index is not included for the game number. Ex. 0->5 = First 5 games (0+1->5)
-
-    beginCount = 0
-    endCount = 1
+    count = 0
     matchDataList = []
-    num = 10
+    num = 7 # represents number of 98 list of game data requests for this player (7*98 = 686 games will be parsed)
     for i in range(num):
-        matchDataList.append(api.get_matchDataList_by_account(summonerName, beginCount * 98, endCount *98))
-        beginCount += 1
-        endCount += 1
+        matchDataList.append(api.get_matchDataList_by_account(summonerName, count * 98, (count + 1) * 98))
+        count += 1
+
         if i != num - 1:
             time.sleep(121)
 
@@ -32,7 +28,19 @@ def main():
         result = parsedDf.append(newParsedDf)
         parsedDf = result
 
-    parsedDf.to_csv('Controleed Freak.csv', mode='w')
+    print(parsedDf)
+    parsedDf.to_csv(summonerName + '.csv', mode='w')
+
+    print('File Successfully Created: ' + summonerName + '.csv')
+    time.sleep(121)
+
+
+def main():
+
+    apikey = Consts.API_KEY['apikey']
+    api = RiotAPI(apikey)
+
+    summonerName = 'Controleed Freak'
 
 if __name__ == "__main__":
     main()

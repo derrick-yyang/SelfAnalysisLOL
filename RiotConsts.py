@@ -17,4 +17,9 @@ REGIONS = {
     'america':'americas'
 }
 
+# This must be changed/checked when running this program again
+API_KEY = {
+    'apikey': 'RGAPI-72d0e930-a00d-4814-9b6f-071c988f6b71'
+}
+
 

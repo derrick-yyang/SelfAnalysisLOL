@@ -1,3 +1,5 @@
+# This class does the following:
+
 # Given the match data from get_match_by_matchid from RiotAPI
 # Returns a panda Dataframe with the following column information (in this order):
 #   - Summoner name
@@ -9,11 +11,6 @@
 #   - Champion Level
 #   - Vision Score
 
-# TODO
-# Finish get_matchListData_by_account function in Riot API (remember to throttle)
-# Feed that data into this class (riotParser) and return a dataframe
-# Generate csv files for players
-
 # TODO2:
 # find winrate
 # get heat map
@@ -23,7 +20,6 @@
 # adjust how big the map is (not ugly)
 
 import pandas as pd
-
 
 class RiotParser(object):
 
