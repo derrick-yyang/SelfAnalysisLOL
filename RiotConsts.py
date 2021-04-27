@@ -19,7 +19,6 @@ REGIONS = {
 
 # This must be changed/checked when running this program again
 API_KEY = {
-    'apikey': 'RGAPI-72d0e930-a00d-4814-9b6f-071c988f6b71'
+    'apikey': 'RGAPI-8f92d942-198d-470c-96fa-dc762456d420'
 }
-
 

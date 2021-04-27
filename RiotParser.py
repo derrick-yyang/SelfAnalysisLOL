@@ -11,10 +11,6 @@
 #   - Champion Level
 #   - Vision Score
 
-# TODO2:
-# find winrate
-# get heat map
-
 # TODO3 (stretch goals):
 # color/scale the heatmap properly (40-60 instead of 0-100)
 # adjust how big the map is (not ugly)
@@ -32,15 +28,14 @@ class RiotParser(object):
     CHAMPION_LEVEL = 'Champion Level'
     VISION_SCORE = 'Vision Score'
 
-    def __init__(self, matchDataList, name):
-        self.matchDataList = matchDataList
+    def __init__(self, name):
         self.summonerName = name
 
     # Parses desired data (refer to above) from a list of matchData into a dictionary
-    def parseData(self):
+    def parseData(self, matchDataList):
 
         # add all match data into a list
-        dataList = self.matchDataList
+        dataList = matchDataList
         parsedData = {self.SUMMONER_NAME: [],
                       self.GAME_DURATION: [],
                       self.MATCH_RESULT: [],
