@@ -1,6 +1,8 @@
 # SelfAnalysisLOL
 
 backupMain.py contains the execution of the code to generate heatmap from existing .csv files
+* To query your own data, you must generate your own API Key and put it in RiotConsts.py under API_KEY
+
 
 The RiotAPI class is responsible for making API Calls/Requests from RiotAPI
 Website: https://developer.riotgames.com/
