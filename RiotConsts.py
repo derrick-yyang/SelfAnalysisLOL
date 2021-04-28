@@ -14,7 +14,10 @@ API_VERSIONS = {
 
 REGIONS = {
     'north_america_platform_1':'na1',
-    'america':'americas'
 }
 
+# This must be changed/checked when running this program again
+API_KEY = {
+    'apikey': 'RGAPI-8f92d942-198d-470c-96fa-dc762456d420'
+}
 
