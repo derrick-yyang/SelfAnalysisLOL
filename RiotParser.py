@@ -19,14 +19,14 @@ import pandas as pd
 
 class RiotParser(object):
 
-    SUMMONER_NAME = 'Summoner Name'
-    GAME_DURATION = 'Game Duration'
-    MATCH_RESULT = 'Match Result'
-    CHAMPION_ID = 'Champion ID'
-    CREEP_SCORE = 'Creep Score'
-    GOLD_EARNED = 'Gold Earned'
-    CHAMPION_LEVEL = 'Champion Level'
-    VISION_SCORE = 'Vision Score'
+    # SUMMONER_NAME = 'Summoner Name'
+    # GAME_DURATION = 'Game Duration'
+    # MATCH_RESULT = 'Match Result'
+    # CHAMPION_ID = 'Champion ID'
+    # CREEP_SCORE = 'Creep Score'
+    # GOLD_EARNED = 'Gold Earned'
+    # CHAMPION_LEVEL = 'Champion Level'
+    # VISION_SCORE = 'Vision Score'
 
     def __init__(self, name):
         self.summonerName = name

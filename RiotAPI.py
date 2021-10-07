@@ -1,4 +1,4 @@
-import RiotConsts as Consts
+import constants as Consts
 import requests
 
 # This class is responsible for making API Calls/Requests from RiotAPI
@@ -57,7 +57,7 @@ class RiotAPI(object):
     def get_matchlist_by_account(self, AccountID, params={}):
 
         api_url = Consts.URL['matchlist_by_accountID'].format(
-            version=Consts.API_VERSIONS['matchList'],
+            version=Consts.API_VERSIONS['match'],
             accountID=AccountID
         )
         return self._request(api_url, params)
@@ -65,7 +65,7 @@ class RiotAPI(object):
     def get_match_by_matchid(self, matchId):
 
         api_url = Consts.URL['matches_by_matchID'].format(
-            version=Consts.API_VERSIONS['matchData'],
+            version=Consts.API_VERSIONS['match'],
             matchID=matchId
         )
         return self._request(api_url)

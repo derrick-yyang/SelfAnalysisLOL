@@ -1,6 +1,6 @@
 from RiotAPI import RiotAPI
 from RiotParser import RiotParser
-import RiotConsts as Consts
+import constants as Consts
 import pandas as pd
 import time
 import numpy as np
